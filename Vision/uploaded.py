@@ -10,6 +10,8 @@ import json
 import time
 import sys
 
+import main
+
 from cscore import CameraServer, VideoSource, UsbCamera, MjpegServer
 from networktables import NetworkTablesInstance
 import ntcore
@@ -233,6 +235,6 @@ if __name__ == "__main__":
     for config in switchedCameraConfigs:
         startSwitchedCamera(config)
 
-    # loop forever
-    while True:
-        time.sleep(10)
+    cv_sink = CameraServer.getInstance().getVideo(camera=cameras[0])
+
+    main.start_process(cv_sink, ntinst)

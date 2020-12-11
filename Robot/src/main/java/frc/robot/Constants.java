@@ -8,6 +8,11 @@
 package frc.robot;
 
 public class Constants {
+  public static final class VisionConstants {
+    public static final int TOO_CLOSE = 550;
+    public static final int FAR_ENOUGH = 200;
+  }
+
     public static final class ClawConstants {
         public static final int SERVO_PORT = 8;
     

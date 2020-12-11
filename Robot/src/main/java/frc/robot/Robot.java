@@ -9,9 +9,11 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.auto.GrabAndScoreCommand;
 
 public class Robot extends TimedRobot {
     RobotContainer robotContainer = new RobotContainer();
+    GrabAndScoreCommand autoCommand = new GrabAndScoreCommand();
 
     @Override
     public void robotInit() {
@@ -24,6 +26,7 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
+        autoCommand.schedule();
     }
 
     /**
@@ -38,6 +41,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void teleopInit() {
+        autoCommand.cancel();
     }
 
     /**

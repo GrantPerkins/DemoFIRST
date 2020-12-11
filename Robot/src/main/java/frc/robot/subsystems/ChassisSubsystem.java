@@ -49,4 +49,8 @@ public class ChassisSubsystem extends SubsystemBase {
         leftEncoder.reset();
         rightEncoder.reset();
     }
+
+    public void stop() {
+        drive(0, 0);
+    }
 }
