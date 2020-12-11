@@ -19,12 +19,12 @@ def start_process(cv_sink, nt_instance):
         if len(contours):
             contour = get_largest_contour(contours)
             moments = cv2.moments(contour)
-            try:
+            if moments["m00"] != 0:
                 center_x = int(moments["m10"] / moments["m00"])
                 x, y, width, height = cv2.boundingRect(contour)
                 data_entry.setString("{} {}".format(center_x, width))
                 print("Contour:", center_x, width)
-            except ZeroDivisionError:
+            else:
                 data_entry.setString("-1 -1")
         else:
             data_entry.setString("-1 -1")
