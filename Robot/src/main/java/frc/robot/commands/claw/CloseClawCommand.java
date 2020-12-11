@@ -19,6 +19,6 @@ public class CloseClawCommand extends WaitCommand {
     @Override
     public void initialize() {
         super.initialize();
-        claw.open();
+        claw.close();
     }
 }
