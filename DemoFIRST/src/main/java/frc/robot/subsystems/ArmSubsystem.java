@@ -27,6 +27,7 @@ public class ArmSubsystem extends PIDSubsystem {
         motor = new VictorSP(Constants.ArmConstants.MOTOR_PORT);
         potentiometer = new AnalogPotentiometer(Constants.ArmConstants.POTENTIOMETER_PORT,
                 Constants.ArmConstants.POTENTIOMETER_RANGE, Constants.ArmConstants.POTENTIOMETER_OFFSET);
+        setSetpoint(-25.0);
         enable();
     }
 
