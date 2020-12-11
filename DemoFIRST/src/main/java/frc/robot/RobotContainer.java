@@ -8,6 +8,7 @@
 package frc.robot;
 
 import frc.robot.commands.arm.ArmDownCommand;
+import frc.robot.commands.arm.ArmMiddleCommand;
 import frc.robot.commands.chassis.DefaultDriveCommand;
 import frc.robot.input.Extreme3DPro;
 import frc.robot.subsystems.ArmSubsystem;
@@ -24,5 +25,6 @@ public class RobotContainer {
 
     public void configureButtonBindings() {
         joystick.getButton(1).whenPressed(new ArmDownCommand());
+        joystick.getButton(2).whenPressed(new ArmMiddleCommand())
     }
 }
