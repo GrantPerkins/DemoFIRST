@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj.interfaces.Potentiometer;
+import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.PIDSubsystem;
 import frc.robot.Constants;
@@ -28,6 +29,10 @@ public class ArmSubsystem extends PIDSubsystem {
         potentiometer = new AnalogPotentiometer(Constants.ArmConstants.POTENTIOMETER_PORT,
                 Constants.ArmConstants.POTENTIOMETER_RANGE, Constants.ArmConstants.POTENTIOMETER_OFFSET);
         setSetpoint(-25.0);
+
+        SendableRegistry.addChild(this, motor);
+        SendableRegistry.addChild(this, potentiometer);
+
         enable();
     }
 
@@ -48,7 +53,7 @@ public class ArmSubsystem extends PIDSubsystem {
         return potentiometer.get();
     }
 
-	public boolean atSetpoint() {
-		return m_controller.atSetpoint();
-	}
+    public boolean atSetpoint() {
+        return m_controller.atSetpoint();
+    }
 }
