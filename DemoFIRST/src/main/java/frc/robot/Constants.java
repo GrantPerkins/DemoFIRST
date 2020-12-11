@@ -8,6 +8,17 @@
 package frc.robot;
 
 public class Constants {
+    public static final class ArmConstants {
+        public static final int MOTOR_PORT = 9;
+        public static final int POTENTIOMETER_PORT = 0;
+    
+        public static final double POTENTIOMETER_RANGE = 270.0;
+        public static final double POTENTIOMETER_OFFSET = -192.0;
+    
+        public static final double P = 0.0258;
+        public static final double D = 0.00312;
+      }
+
     public static final class DriveConstants {
         public static final int LEFT_MOTOR_PORT = 7;
         public static final int RIGHT_MOTOR_PORT = 6;
