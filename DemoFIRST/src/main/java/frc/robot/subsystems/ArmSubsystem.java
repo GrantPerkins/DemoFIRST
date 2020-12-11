@@ -46,4 +46,8 @@ public class ArmSubsystem extends PIDSubsystem {
     public double getMeasurement() {
         return potentiometer.get();
     }
+
+	public boolean atSetpoint() {
+		return atSetpoint();
+	}
 }
