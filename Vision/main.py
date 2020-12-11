@@ -23,7 +23,7 @@ def start_process(cv_sink, nt_instance):
                 center_x = int(moments["m10"] / moments["m00"])
                 x, y, width, height = cv2.boundingRect(contour)
                 data_entry.setString("{} {}".format(center_x, width))
-                print("Contour:",center_x, width)
+                print("Contour:", center_x, width)
             except ZeroDivisionError:
                 data_entry.setString("-1 -1")
         else:

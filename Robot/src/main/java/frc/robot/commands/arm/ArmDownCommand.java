@@ -15,7 +15,7 @@ public class ArmDownCommand extends CommandBase {
 
     @Override
     public void execute() {
-        arm.setSetpoint(-25.0);
+        arm.setSetpoint(-27.0);
     }
 
     @Override

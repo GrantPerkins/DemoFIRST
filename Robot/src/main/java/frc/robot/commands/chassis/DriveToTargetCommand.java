@@ -7,25 +7,31 @@
 
 package frc.robot.commands.chassis;
 
+import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.PIDCommand;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.ChassisSubsystem;
 import frc.robot.subsystems.VisionSubsystem;
 
-public class DriveToTargetCommand extends CommandBase {
+public class DriveToTargetCommand extends PIDCommand {
     private final ChassisSubsystem chassisSubsystem;
     private final VisionSubsystem visionSubsystem;
 
     public DriveToTargetCommand() {
+        super(
+            new PIDController(Constants.DriveConstants.P, 0, 0), 
+            RobotContainer.visionSubsystem::getCenterX, 320,
+            RobotContainer.chassisSubsystem::steer,
+             RobotContainer.chassisSubsystem
+        );
         chassisSubsystem = RobotContainer.chassisSubsystem;
         visionSubsystem = RobotContainer.visionSubsystem;
-        addRequirements(chassisSubsystem);
     }
 
-    @Override
-    public void execute() {
-        chassisSubsystem.drive(.5, 0);
+    public void useOutput(double output) {
+        chassisSubsystem.drive(.5, output);
     }
 
     @Override

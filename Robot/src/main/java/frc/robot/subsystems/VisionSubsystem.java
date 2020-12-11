@@ -30,4 +30,8 @@ public class VisionSubsystem extends SubsystemBase {
     public int getWidth() {
         return width;
     }
+
+    public int getCenterX() {
+        return centerX;
+    }
 }

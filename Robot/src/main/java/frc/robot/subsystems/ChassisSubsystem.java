@@ -53,4 +53,8 @@ public class ChassisSubsystem extends SubsystemBase {
     public void stop() {
         drive(0, 0);
     }
+
+    public void steer(double heading) {
+        drive(.5, heading);
+    }
 }
