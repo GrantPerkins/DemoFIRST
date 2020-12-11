@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import frc.robot.commands.arm.ArmDownCommand;
+import frc.robot.commands.arm.ArmMiddleCommand;
 import frc.robot.commands.chassis.DefaultDriveCommand;
 import frc.robot.input.Extreme3DPro;
 import frc.robot.subsystems.ArmSubsystem;
@@ -18,5 +20,11 @@ public class RobotContainer {
     public static final Extreme3DPro joystick = new Extreme3DPro(0);
     public RobotContainer() {
         chassisSubsystem.setDefaultCommand(new DefaultDriveCommand());
+        configureButtonBindings();
+    }
+
+    public void configureButtonBindings() {
+        joystick.getButton(1).whenPressed(new ArmDownCommand());
+        joystick.getButton(2).whenPressed(new ArmMiddleCommand())
     }
 }
