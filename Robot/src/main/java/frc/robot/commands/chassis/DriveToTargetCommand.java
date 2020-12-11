@@ -30,10 +30,6 @@ public class DriveToTargetCommand extends PIDCommand {
         visionSubsystem = RobotContainer.visionSubsystem;
     }
 
-    public void useOutput(double output) {
-        chassisSubsystem.drive(.5, output);
-    }
-
     @Override
     public void end(boolean interrupted) {
         chassisSubsystem.stop();

@@ -32,6 +32,6 @@ public class VisionSubsystem extends SubsystemBase {
     }
 
     public int getCenterX() {
-        return centerX;
+        return centerX == -1 ? 320: centerX;
     }
 }

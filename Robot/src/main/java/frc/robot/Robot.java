@@ -26,6 +26,7 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
+        autoCommand = new GrabAndScoreCommand();
         autoCommand.schedule();
     }
 

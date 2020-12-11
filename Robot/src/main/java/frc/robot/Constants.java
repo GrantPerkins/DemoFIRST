@@ -9,7 +9,7 @@ package frc.robot;
 
 public class Constants {
     public static final class VisionConstants {
-        public static final int TOO_CLOSE = 550;
+        public static final int TOO_CLOSE = 500;
         public static final int FAR_ENOUGH = 200;
     }
 
@@ -48,7 +48,7 @@ public class Constants {
         public static final double ENCODER_DISTANCE_PER_PULSE = (WHEEL_DIAMETER_METERS * Math.PI)
                 / ((double) ENCODER_CPR) * GEAR_RATIO;
 
-        public static final double P = 0.0004;
+        public static final double P = -0.003;
 
     }
 }

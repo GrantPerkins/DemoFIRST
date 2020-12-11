@@ -22,7 +22,7 @@ public class ArmSubsystem extends PIDSubsystem {
 
     public ArmSubsystem() {
         super(new PIDController(Constants.ArmConstants.P, 0.0, Constants.ArmConstants.D));
-        m_controller.setTolerance(1.0);
+        m_controller.setTolerance(5.0);
 
         motor = new VictorSP(Constants.ArmConstants.MOTOR_PORT);
         potentiometer = new AnalogPotentiometer(Constants.ArmConstants.POTENTIOMETER_PORT,
