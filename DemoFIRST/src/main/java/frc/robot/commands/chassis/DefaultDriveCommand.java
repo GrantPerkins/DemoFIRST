@@ -23,7 +23,7 @@ public class DefaultDriveCommand extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        RobotContainer.chassisSubsystem.drive(RobotContainer.joystick.getX(), RobotContainer.joystick.getY());
+        RobotContainer.chassisSubsystem.drive(-RobotContainer.joystick.getY(), RobotContainer.joystick.getX());
     }
 
     // Called once the command ends or is interrupted.
