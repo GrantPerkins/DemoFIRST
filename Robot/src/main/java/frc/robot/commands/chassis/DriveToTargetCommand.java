@@ -8,7 +8,6 @@
 package frc.robot.commands.chassis;
 
 import edu.wpi.first.wpilibj.controller.PIDController;
-import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.PIDCommand;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
@@ -22,9 +21,10 @@ public class DriveToTargetCommand extends PIDCommand {
     public DriveToTargetCommand() {
         super(
             new PIDController(Constants.DriveConstants.P, 0, 0), 
-            RobotContainer.visionSubsystem::getCenterX, 320,
+            RobotContainer.visionSubsystem::getCenterX, 
+            320,
             RobotContainer.chassisSubsystem::steer,
-             RobotContainer.chassisSubsystem
+            RobotContainer.chassisSubsystem
         );
         chassisSubsystem = RobotContainer.chassisSubsystem;
         visionSubsystem = RobotContainer.visionSubsystem;
