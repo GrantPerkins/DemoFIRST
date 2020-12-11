@@ -8,6 +8,15 @@
 package frc.robot;
 
 public class Constants {
+    public static final class ClawConstants {
+        public static final int SERVO_PORT = 8;
+    
+        public static final double SERVO_CLOSED = 0.0;
+        public static final double SERVO_OPEN = 1.0;
+    
+        public static final double SERVO_ACTION_TIME = 1.0;
+      }
+
     public static final class ArmConstants {
         public static final int MOTOR_PORT = 9;
         public static final int POTENTIOMETER_PORT = 0;
