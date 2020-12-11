@@ -48,6 +48,6 @@ public class ArmSubsystem extends PIDSubsystem {
     }
 
 	public boolean atSetpoint() {
-		return atSetpoint();
+		return m_controller.atSetpoint();
 	}
 }

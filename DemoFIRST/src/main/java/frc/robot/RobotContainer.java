@@ -25,6 +25,6 @@ public class RobotContainer {
 
     public void configureButtonBindings() {
         joystick.getButton(1).whenPressed(new ArmDownCommand());
-        joystick.getButton(2).whenPressed(new ArmMiddleCommand())
+        joystick.getButton(2).whenPressed(new ArmMiddleCommand());
     }
 }
