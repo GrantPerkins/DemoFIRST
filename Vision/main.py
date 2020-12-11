@@ -16,7 +16,7 @@ def start_process(cv_sink, nt_instance):
         _, frame = cv_sink.grabFrame(np.zeros((480, 640, 3), dtype=np.uint8))
         pipeline.process(frame)
         contours = pipeline.find_contours_output
-        if len(contours):
+        if len(contours) > 0:
             contour = get_largest_contour(contours)
             moments = cv2.moments(contour)
             if moments["m00"] != 0:

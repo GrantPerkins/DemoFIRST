@@ -7,9 +7,13 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.arm.ArmDownCommand;
-import frc.robot.commands.arm.ArmMiddleCommand;
+import frc.robot.commands.arm.ArmUpCommand;
+import frc.robot.commands.auto.GrabAndScoreCommand;
+import frc.robot.commands.chassis.BackUpFromTargetCommand;
 import frc.robot.commands.chassis.DefaultDriveCommand;
+import frc.robot.commands.chassis.DriveToTargetCommand;
 import frc.robot.commands.claw.CloseClawCommand;
 import frc.robot.commands.claw.OpenClawCommand;
 import frc.robot.input.Extreme3DPro;
@@ -27,13 +31,22 @@ public class RobotContainer {
 
     public RobotContainer() {
         chassisSubsystem.setDefaultCommand(new DefaultDriveCommand());
+
+        SmartDashboard.putData(armSubsystem);
+        SmartDashboard.putData(chassisSubsystem);
+        SmartDashboard.putData(clawSubsystem);
+        
         configureButtonBindings();
     }
 
     public void configureButtonBindings() {
-        joystick.getButton(1).whenPressed(new ArmDownCommand());
-        joystick.getButton(2).whenPressed(new ArmMiddleCommand());
+        joystick.getButton(1).whenPressed(new GrabAndScoreCommand());
+        joystick.getButton(4).whenPressed(new ArmDownCommand());
+        joystick.getButton(6).whenPressed(new ArmUpCommand());
         joystick.getButton(5).whenPressed(new OpenClawCommand());
-        joystick.getButton(6).whenPressed(new CloseClawCommand());
+        joystick.getButton(3).whenPressed(new CloseClawCommand());
+        SmartDashboard.putData("Grab and Score", new GrabAndScoreCommand());
+        SmartDashboard.putData("Back up from Target", new BackUpFromTargetCommand());
+        SmartDashboard.putData("Drive to Target", new DriveToTargetCommand());
     }
 }
