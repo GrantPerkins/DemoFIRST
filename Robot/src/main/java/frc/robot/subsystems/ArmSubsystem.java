@@ -40,7 +40,7 @@ public class ArmSubsystem extends PIDSubsystem {
         return potentiometer.get();
     }
 
-	public boolean atSetpoint() {
-		return m_controller.atSetpoint();
-	}
+    public boolean atSetpoint() {
+        return m_controller.atSetpoint();
+    }
 }

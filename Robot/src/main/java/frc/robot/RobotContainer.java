@@ -9,7 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.arm.ArmDownCommand;
-import frc.robot.commands.arm.ArmMiddleCommand;
+import frc.robot.commands.arm.ArmUpCommand;
 import frc.robot.commands.auto.GrabAndScoreCommand;
 import frc.robot.commands.claw.CloseClawCommand;
 import frc.robot.commands.claw.OpenClawCommand;
@@ -28,7 +28,7 @@ public class RobotContainer {
 
     public RobotContainer() {
         SmartDashboard.putData("ArmDown", new ArmDownCommand());
-        SmartDashboard.putData("ArmUp", new ArmMiddleCommand());
+        SmartDashboard.putData("ArmUp", new ArmUpCommand());
         SmartDashboard.putData("Open Claw", new OpenClawCommand());
         SmartDashboard.putData("Close Claw", new CloseClawCommand());
         SmartDashboard.putData("GrabAndScore", new GrabAndScoreCommand());
