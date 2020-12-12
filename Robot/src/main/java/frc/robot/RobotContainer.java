@@ -7,9 +7,10 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.arm.ArmDownCommand;
 import frc.robot.commands.arm.ArmMiddleCommand;
-import frc.robot.commands.chassis.DefaultDriveCommand;
+import frc.robot.commands.auto.GrabAndScoreCommand;
 import frc.robot.commands.claw.CloseClawCommand;
 import frc.robot.commands.claw.OpenClawCommand;
 import frc.robot.input.Extreme3DPro;
@@ -26,14 +27,10 @@ public class RobotContainer {
     public static final Extreme3DPro joystick = new Extreme3DPro(0);
 
     public RobotContainer() {
-        chassisSubsystem.setDefaultCommand(new DefaultDriveCommand());
-        configureButtonBindings();
-    }
-
-    public void configureButtonBindings() {
-        joystick.getButton(1).whenPressed(new ArmDownCommand());
-        joystick.getButton(2).whenPressed(new ArmMiddleCommand());
-        joystick.getButton(5).whenPressed(new OpenClawCommand());
-        joystick.getButton(6).whenPressed(new CloseClawCommand());
+        SmartDashboard.putData("ArmDown", new ArmDownCommand());
+        SmartDashboard.putData("ArmUp", new ArmMiddleCommand());
+        SmartDashboard.putData("Open Claw", new OpenClawCommand());
+        SmartDashboard.putData("Close Claw", new CloseClawCommand());
+        SmartDashboard.putData("GrabAndScore", new GrabAndScoreCommand());
     }
 }

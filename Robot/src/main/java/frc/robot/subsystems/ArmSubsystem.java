@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj.interfaces.Potentiometer;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.PIDSubsystem;
 import frc.robot.Constants;
 
@@ -29,13 +28,6 @@ public class ArmSubsystem extends PIDSubsystem {
                 Constants.ArmConstants.POTENTIOMETER_RANGE, Constants.ArmConstants.POTENTIOMETER_OFFSET);
         setSetpoint(-25.0);
         enable();
-    }
-
-    @Override
-    public void periodic() {
-        super.periodic();
-
-        SmartDashboard.putNumber("Arm Angle", getMeasurement());
     }
 
     @Override
